@@ -1,0 +1,53 @@
+
+.MuiFormHelperText-root.Mui-error {
+  color: $RED !important;
+}
+
+.MuiFormHelperText-root {
+  color: $RED !important;
+}
+.App-header .MuiButton-outlinedPrimary {
+  color: #fdfdfd;
+  border: 1px solid $BORDER;
+}
+.MuiDialogTitle-root {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 7px 24px;
+}
+
+.MuiFormLabel-root .question {
+  font-size: 1.1rem;
+  line-height: 2;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.84);
+}
+span.MuiTypography-body1 {
+  font-size: 1rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.00938em;
+}
+
+
+svg:not(:root) {
+  overflow: visible;
+  height: 20px;
+}
+
+@media only screen and (max-width: 414px) {
+  button.MuiButton-outlinedPrimary {
+    border: none;
+    min-width: initial;
+    margin: 0  5px 5px 5px;
+    padding: 3px;
+    width: initial;
+    color: black;
+    height: 37px;
+
+    
+  }
+
+
+}

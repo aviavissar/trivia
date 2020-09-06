@@ -1,0 +1,53 @@
+[
+    {
+        "question":"Of all the great world religions, in size Judaism is the",
+        "answers":["Second smallest","Third largest","Smallest","Fourth largest"],
+        "right_answerNum":3,
+        "score":10
+    },  {
+        "question":"Since the Holocaust, the majority of Jews worldwide live in what two countries?",
+        "answers":["Germany and Israel.","Israel and Palestine.","Israel and the United States.","The United States and Germany."],
+        "right_answerNum":3,
+        "score":10
+    },  {
+        "question":"Which of the following is NOT included in the Bible?",
+        "answers":["Ketuvim","Torah","Revelation","Neviim"],
+        "right_answerNum":3,
+        "score":10
+    },  {
+        "question":"The king who first established Israel as a great nation was",
+        "answers":["Aaron","David","Solomon","Abraham"],
+        "right_answerNum":2,
+        "score":10
+    },  {
+        "question":"Which Jewish holiday recalls God's liberation of the tribes of Israel from Egypt?",
+        "answers":["Passover","The Sabbath","Rosh Hashanah","Yom Kippur"],
+        "right_answerNum":1,
+        "score":10
+    },  {
+        "question":"The word “Zion” is an ancient biblical term that referred to what city?",
+        "answers":["Bethlehem","Tel-aviv","Nazareth","Jerusalem"],
+        "right_answerNum":4,
+        "score":10
+    },  {
+        "question":"Who ruled much of the Middle East until World War I?",
+        "answers":["Ottoman Empire","United States","Great Britain","Israel"],
+        "right_answerNum":1,
+        "score":10
+    },  {
+        "question":"What colors the Israeli flag.",
+        "answers":["green","red and blue","red and pink","blue and white"],
+        "right_answerNum":4,
+        "score":10
+    },  {
+        "question":"How was the first prime minster",
+        "answers":["David Ben Guryon","Avi Avissar","Jimi Hendrix","Moshe Rabenu"],
+        "right_answerNum":1,
+        "score":10
+    },  {
+        "question":"Judaism is a __",
+        "answers":["religion","band","city","book"],
+        "right_answerNum":1,
+        "score":10
+    }
+]
