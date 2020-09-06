@@ -4,9 +4,9 @@ import './App_styles.scss'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import AppRouter, { history } from './router/AppRouter';
-
+//import { useHistory } from "react-router-dom";
 const loader = document.querySelector('.loader');
-
+//const history = createBrowserHistory();
 
 
 const hideLoader = () => loader.classList.add('loader--hide');
@@ -14,7 +14,7 @@ const hideLoader = () => loader.classList.add('loader--hide');
 //setTimeout(() => 
 ReactDOM.render(
   <React.StrictMode>
-  <AppRouter hideLoader={hideLoader}/>
+  <AppRouter history={history} hideLoader={hideLoader}/>
  
    
   </React.StrictMode>,

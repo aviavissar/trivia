@@ -1,17 +1,22 @@
 import React, { useEffect } from "react";
 import styled from "styled-components/macro";
 import Quiz from './view/Quiz';
+import Results from './view/Results'
 
 
-const App = ({  }) => {
- 
+const App = ({ hideLoader }) => {
+  // useEffect(()=>{
+  //   hideLoader()
+  
+  // }, [hideLoader]);
+
 
   return (
     <Box className="App">
       <Quiz>     
       </Quiz>
       
-     
+  
     </Box>
   );
 };

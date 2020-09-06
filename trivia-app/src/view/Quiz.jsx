@@ -3,12 +3,13 @@ import styled from "styled-components";
 import Question from "./Question";
 import quizArr from "../quiz.json";
 import AppRouter, { history } from '../router/AppRouter';
+import { useHistory } from "react-router-dom";
 
 
 
 const Quiz = ({}) => {
   const [answersArr, setAnswersArr] = useState([]);
-
+  let history = useHistory();
   useEffect(() => {
     console.log(answersArr);
   }, [answersArr]);
@@ -24,8 +25,9 @@ const Quiz = ({}) => {
           grade = grade + quizArr[indx].score;
         }
       });
-
-      history.push('/results');
+     
+   history.push({ pathname: '/results'});
+    
       //  return grade;
     }
   };
