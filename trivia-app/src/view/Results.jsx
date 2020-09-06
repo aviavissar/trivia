@@ -8,13 +8,14 @@ const Results = (props) => {
   useEffect(() => {
     const grades = JSON.parse(localStorage.getItem("avissar-trivia"));
     if (!grades) {
-      localStorage.setItem("avissar-trivia", JSON.stringify([]));
+      localStorage.setItem("avissar-trivia", JSON.stringify([{time:(props.location.state.time),grade: (props.location.state.grade)}]));
     } else {
       grades.push({
         time: props.location.state.time,
         grade: props.location.state.grade,
       });
       setGrades(grades);
+      localStorage.setItem("avissar-trivia", JSON.stringify(grades));
     }
   }, []);
   return (
@@ -25,9 +26,9 @@ const Results = (props) => {
       </h3>
       <Table>
         <h2>your scores table</h2>
-        {gradesArr.map(({ time, grade }) => {
+        {gradesArr.map(({ time, grade },indx) => {
           return (
-            <Tr key={time}>
+            <Tr key={grade+indx+time}>
               <Td className="time">{time}</Td>
               <Td className="score">{grade}</Td>
             </Tr>

@@ -13,6 +13,7 @@ const Quiz = ({}) => {
     if (checkIfQuizFilled()) {
       //check if everything is Filled
       let grade = 0;
+      console.log(answersArr)
       answersArr.map((ansNum, indx) => {
         if (ansNum === quizArr[indx].right_answerNum) {
           grade = grade + quizArr[indx].score;
@@ -46,7 +47,7 @@ const Quiz = ({}) => {
 
   const fillAnswersArr = (group_indx, ans) => {
     const tmp = answersArr;
-    tmp[group_indx] = parseInt(ans);
+    tmp[group_indx] = parseInt(ans)+1;
     setAnswersArr([...tmp]);
   };
 
