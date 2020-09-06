@@ -1,34 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import styled from "styled-components";
 import Question from "./Question";
 import quizArr from "../quiz.json";
-import AppRouter, { history } from '../router/AppRouter';
-import { useHistory } from "react-router-dom";
-
-
+import { history } from "../router/AppRouter";
+import moment from "moment";
 
 const Quiz = ({}) => {
   const [answersArr, setAnswersArr] = useState([]);
-  let history = useHistory();
-  useEffect(() => {
-    console.log(answersArr);
-  }, [answersArr]);
 
   //calculate the grade
   const checkTest = () => {
-    if (true || checkIfQuizFilled()) {
+    if (checkIfQuizFilled()) {
       //check if everything is Filled
-
       let grade = 0;
       answersArr.map((ansNum, indx) => {
         if (ansNum === quizArr[indx].right_answerNum) {
           grade = grade + quizArr[indx].score;
         }
       });
-     
-   history.push({ pathname: '/results'});
-    
-      //  return grade;
+
+      const time = moment().format("lll");
+      history.push({ pathname: "/results", state: { grade, time } });
     }
   };
 
@@ -78,7 +70,6 @@ const Quiz = ({}) => {
       <Box className={"box"}>
         <button onClick={checkTest}>send Quiz</button>
       </Box>
-      
     </div>
   );
 };
@@ -88,7 +79,4 @@ const Box = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-
-  @media only screen and (max-width: 414px) {
-  }
 `;

@@ -1,22 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components/macro";
-import Quiz from './view/Quiz';
-import Results from './view/Results'
+import Quiz from "./view/Quiz";
 
-
-const App = ({ hideLoader }) => {
-  // useEffect(()=>{
-  //   hideLoader()
-  
-  // }, [hideLoader]);
-
-
+const App = () => {
   return (
     <Box className="App">
-      <Quiz>     
-      </Quiz>
-      
-  
+      <Quiz />
     </Box>
   );
 };
@@ -24,10 +13,10 @@ const App = ({ hideLoader }) => {
 export default App;
 
 const Box = styled.div`
- padding: 30px;
- width: 80%;
+  padding: 30px;
+  width: 80%;
   margin: 10px auto;
- @media only screen and (max-width: 414px) {
+  @media only screen and (max-width: 414px) {
     width: 300px;
     padding: 1px 5px;
   }
