@@ -5,6 +5,8 @@ import quizArr from "../quiz.json";
 import { history } from "../router/AppRouter";
 import moment from "moment";
 
+const NUM_OF_QUESTIONS=10;
+
 const Quiz = ({}) => {
   const [answersArr, setAnswersArr] = useState([]);
 
@@ -32,7 +34,7 @@ const Quiz = ({}) => {
         empty.push(indx + 1);
       }
     });
-    if (empty.length > 0 || answersArr.length === 0) {
+    if (empty.length > 0 || answersArr.length < NUM_OF_QUESTIONS) {
       let err = "";
       empty.forEach((emptyAnswerNum) => {
         err = `${emptyAnswerNum},` + err;
