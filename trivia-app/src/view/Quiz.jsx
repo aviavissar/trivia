@@ -21,7 +21,7 @@ const Quiz = ({}) => {
       });
 
       const time = moment().format("lll");
-      history.push({ pathname: "/results", state: { grade, time } });
+      history.push({ pathname: "/results", state: { grade, time,finish:false } });
     }
   };
 

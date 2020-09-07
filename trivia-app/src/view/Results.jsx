@@ -2,33 +2,73 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 
-const Results = (props) => {
+const Results = ({ location }) => {
   let history = useHistory();
   const [gradesArr, setGrades] = useState([]);
   useEffect(() => {
+    // data show when refresh
     const grades = JSON.parse(localStorage.getItem("avissar-trivia"));
-    if (!grades) {
-      localStorage.setItem("avissar-trivia", JSON.stringify([{time:(props.location.state.time),grade: (props.location.state.grade)}]));
+    if (grades) {
+      setGrades(JSON.parse(localStorage.getItem("avissar-trivia")));
     } else {
-      grades.push({
-        time: props.location.state.time,
-        grade: props.location.state.grade,
-      });
-      setGrades(grades);
-      localStorage.setItem("avissar-trivia", JSON.stringify(grades));
+      setGrades([
+        {
+          time: location.state.time,
+          grade: location.state.grade,
+        },
+      ]);
+    }
+
+    if (!location.state.finish) {
+      //preventing data send when refresh
+
+      if (!grades) {
+        localStorage.setItem(
+          "avissar-trivia",
+          JSON.stringify([
+            {
+              time: location.state.time,
+              grade: location.state.grade,
+            },
+          ])
+        );
+        setGrades([
+          {
+            time: location.state.time,
+            grade: location.state.grade,
+          },
+        ]);
+
+        history.replace({ //preventing data send when refresh
+          pathname: "/results",
+          state: { ...location.state, finish: true },
+        });
+      } else {
+        grades.push({
+          time: location.state.time,
+          grade: location.state.grade,
+        });
+        setGrades(grades);
+        localStorage.setItem("avissar-trivia", JSON.stringify(grades));
+
+        history.replace({ //preventing data send when refresh
+          pathname: "/results",
+          state: { ...location.state, finish: true },
+        });
+      }
     }
   }, []);
   return (
     <Box>
       <h3>
-        today, {props.location.state.time}
-        <br /> Your grade is :<span>{props.location.state.grade}</span>
+        today, {location.state.time}
+        <br /> Your grade is :<span>{location.state.grade}</span>
       </h3>
       <Table>
         <h2>your scores table</h2>
-        {gradesArr.map(({ time, grade },indx) => {
+        {gradesArr.map(({ time, grade }, indx) => {
           return (
-            <Tr key={grade+indx+time}>
+            <Tr key={grade + indx + time}>
               <Td className="time">{time}</Td>
               <Td className="score">{grade}</Td>
             </Tr>
